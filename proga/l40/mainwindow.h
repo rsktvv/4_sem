@@ -1,6 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <QPoint>
+#include <QPainter>
+#include <QMouseEvent>
+#include <QList>
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -14,8 +17,12 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void paintEvent(QPaintEvent *event);
+    void mousePressEvent(QMouseEvent *event);
 
 private:
     Ui::MainWindow *ui;
+    QList <QPoint> points;
+    QList <int> len;
 };
 #endif // MAINWINDOW_H
