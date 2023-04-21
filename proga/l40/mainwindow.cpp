@@ -1,8 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QPoint>
-#include <QPainter>
-#include <QMouseEvent>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -21,9 +19,11 @@ void MainWindow::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     if(points.size() > 0)
     {
+        painter.setBrush(Qt::red);
         painter.drawEllipse(points[0], 5, 5);
         for(int i = 1; i < points.size(); i++)
         {
+            painter.setBrush(Qt::black);
             painter.drawEllipse(points[i], 5 ,5);
             for (int j = 1; j < i; j++)
             {
@@ -47,13 +47,15 @@ void MainWindow::paintEvent(QPaintEvent *event)
             for (int i = 0; i < points.size(); i++)
             {
                 if (i != pos)
+                {
+                    painter.setBrush(Qt::red);
                     painter.drawLine(points[i], points[pos]);
+                 }
+
             }
-        }
+         }
 
     }
-
-
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *event)

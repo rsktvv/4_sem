@@ -2,6 +2,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPainter>
+#include <QMouseEvent>
+#include <QRect>
+#include <QtMath>
+#include <QVector>
+#include <QPoint>
+#include <QDesktopWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,9 +23,11 @@ public:
     ~MainWindow();
     void paintEvent(QPaintEvent *event);
     void mousePressEvent(QMouseEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
 
 private:
+    QRect screen;
+    int height,width;
+    int x,y;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
