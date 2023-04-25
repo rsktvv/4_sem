@@ -10,6 +10,7 @@
 #include <QPoint>
 #include <QDesktopWidget>
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -25,11 +26,10 @@ public:
     void mousePressEvent(QMouseEvent *event);
 
 private:
-    QRect screen;
-    int height,width;
-    int x,y;
-    int r=40;
+    int r=100;
     int a=20;
+    QPoint point;
+    QVector <QRect> mass;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

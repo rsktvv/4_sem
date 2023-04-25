@@ -15,29 +15,27 @@ MainWindow::~MainWindow()
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
 {
-    x = event->x();
-    y = event->y();
+    point = QPoint(event->x(),event->y());
+    for(int i=0;i<geometry().width();i+=a)
+        for(int j=0;j<geometry().height();j+=a)
+            mass.append(QRect(i,j,a,a));
     repaint();
 }
 
 void MainWindow::paintEvent(QPaintEvent *event)
 {
-    QRect screen = frameGeometry();
     QPainter painter(this);
 
-    for(int i = 0 ; i < screen.width(); i+=a){
-        for(int j = 0; j < screen.height(); j+=a){
-                painter.drawRect(i,j,a,a);
-                if(((qPow((i-x),2)+qPow((j-y),2)<=10000 && qPow(((i+20)-x),2)+qPow(((j+20)-y),2)<=10000)))
-                {
-                    painter.fillRect(i,j,20,20,Qt::blue);
-                }
-             }
-        }
+    for(int i=0;i<mass.size();i++)
+        painter.drawRect(mass[i]);
 
-
-    painter.drawEllipse(x-100,y-100,200,200);
-
-}
+    for(int i=0;i<mass.size();i++)
+        if(pow(mass[i].topLeft().x()-point.x(),2)+pow(mass[i].topLeft().y()-point.y(),2)<=r*r)
+            if(pow(mass[i].topRight().x()-point.x(),2)+pow(mass[i].topRight().y()-point.y(),2)<=r*r)
+                if(pow(mass[i].bottomLeft().x()-point.x(),2)+pow(mass[i].bottomLeft().y()-point.y(),2)<=r*r)
+                    if(pow(mass[i].bottomRight().x()-point.x(),2)+pow(mass[i].bottomRight().y()-point.y(),2)<=r*r)
+                        painter.fillRect(mass[i],Qt::blue);
+          painter.drawEllipse(point,r,r);
+      }
 
 

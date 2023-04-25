@@ -7,6 +7,7 @@
 #include <QPoint>
 #include <QPainter>
 #include <QMouseEvent>
+#include <QtMath>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,7 +25,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QList <QPoint> points;
-    QList <int> len;
+    QVector <QPoint> points;
+    QVector <int> len;
 };
 #endif // MAINWINDOW_H
