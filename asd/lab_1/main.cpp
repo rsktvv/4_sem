@@ -79,8 +79,7 @@ void convexHull(Point points[], int n)
     int m = 1; 
     for (int i = 1; i < n; i++)
     {
-        while (i < n - 1 && orientation(p0, points[i],
-            points[i + 1]) == 0)
+        while (i < n - 1 && orientation(p0, points[i], points[i + 1]) == 0)
             i++;
 
         points[m] = points[i];
@@ -117,7 +116,7 @@ void convexHull(Point points[], int n)
 int main()
 {
     Point points[] = { {0, 3}, {1, 1}, {2, 2}, {4, 4},
-                      {0, 0}, {1, 2}, {3, 1}, {3, 3} };
+                       {0, 0}, {1, 2}, {3, 1}, {3, 3} };
     int n = sizeof(points) / sizeof(points[0]);
     convexHull(points, n);
     return 0;

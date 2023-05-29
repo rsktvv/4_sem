@@ -18,9 +18,9 @@ int MainWindow::Color(QPoint point,QVector<QPoint> circles)
     int color=0;
     for(int i=0;i<circles.size();i++)
     {
-       int distance=0;
+        int distance=0;
         distance = qPow(point.x()-circles[i].x(),2)+qPow(point.y()-circles[i].y(),2);
-        if (distance<=r*r/3)
+        if (distance<=r*r)
             color++;
     }
     return color;
@@ -37,16 +37,16 @@ void MainWindow::paintEvent(QPaintEvent *event)
     QPen pen;
     QPoint pixel;
 
-   for (int i=0;i<circles.size();i++)
-       painter.drawEllipse(circles[i].x()-r/2,circles[i].y()-r/2,r,r);
+    for (int i=0;i<circles.size();i++)
+       painter.drawEllipse(circles[i],r,r);
 
-   for(pixel.setX(0);pixel.x()<geometry().width();pixel.rx()++)
-       for(pixel.setY(0);pixel.y()<geometry().height();pixel.ry()++)
-       {
-           QColor colors[]={Qt::red,Qt::green,Qt::yellow,Qt::blue,Qt::gray};
-           int index = Color(pixel,circles);
-           pen.setColor(colors[index-2]);
-           painter.setPen(pen);
-           painter.drawPoint(pixel);
-       }
+    for(pixel.setX(0);pixel.x()<geometry().width();pixel.rx()++)
+        for(pixel.setY(0);pixel.y()<geometry().height();pixel.ry()++)
+        {
+            QColor colors[]={Qt::red,Qt::green,Qt::yellow,Qt::blue,Qt::gray,Qt::black,Qt::white};
+            int index = Color(pixel,circles);
+            pen.setColor(colors[index-2]);
+            painter.setPen(pen);
+            painter.drawPoint(pixel);
+        }
 }

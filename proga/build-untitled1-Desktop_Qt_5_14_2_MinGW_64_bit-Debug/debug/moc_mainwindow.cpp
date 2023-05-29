@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../l42/mainwindow.h"
+#include "../../l46/mainwindow.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

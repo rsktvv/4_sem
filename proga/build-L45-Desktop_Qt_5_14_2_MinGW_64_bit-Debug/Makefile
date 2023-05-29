@@ -248,7 +248,6 @@ Makefile: ../L45/L45.pro ../../../../qt_creator/5.14.2/mingw73_64/mkspecs/win32-
 		../../../../qt_creator/5.14.2/mingw73_64/mkspecs/features/qt_config.prf \
 		../../../../qt_creator/5.14.2/mingw73_64/mkspecs/win32-g++/qmake.conf \
 		../../../../qt_creator/5.14.2/mingw73_64/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		../../../../qt_creator/5.14.2/mingw73_64/mkspecs/features/exclusive_builds.prf \
 		../../../../qt_creator/5.14.2/mingw73_64/mkspecs/features/toolchain.prf \
 		../../../../qt_creator/5.14.2/mingw73_64/mkspecs/features/default_pre.prf \
@@ -277,6 +276,7 @@ Makefile: ../L45/L45.pro ../../../../qt_creator/5.14.2/mingw73_64/mkspecs/win32-
 		../../../../qt_creator/5.14.2/mingw73_64/lib/Qt5Gui.prl \
 		../../../../qt_creator/5.14.2/mingw73_64/lib/Qt5Core.prl \
 		../../../../qt_creator/5.14.2/mingw73_64/lib/qtmain.prl \
+		.qmake.stash \
 		../../../../qt_creator/5.14.2/mingw73_64/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\L45\L45.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../../../qt_creator/5.14.2/mingw73_64/mkspecs/features/spec_pre.prf:
@@ -457,7 +457,6 @@ Makefile: ../L45/L45.pro ../../../../qt_creator/5.14.2/mingw73_64/mkspecs/win32-
 ../../../../qt_creator/5.14.2/mingw73_64/mkspecs/features/qt_config.prf:
 ../../../../qt_creator/5.14.2/mingw73_64/mkspecs/win32-g++/qmake.conf:
 ../../../../qt_creator/5.14.2/mingw73_64/mkspecs/features/spec_post.prf:
-.qmake.stash:
 ../../../../qt_creator/5.14.2/mingw73_64/mkspecs/features/exclusive_builds.prf:
 ../../../../qt_creator/5.14.2/mingw73_64/mkspecs/features/toolchain.prf:
 ../../../../qt_creator/5.14.2/mingw73_64/mkspecs/features/default_pre.prf:
@@ -486,6 +485,7 @@ Makefile: ../L45/L45.pro ../../../../qt_creator/5.14.2/mingw73_64/mkspecs/win32-
 ../../../../qt_creator/5.14.2/mingw73_64/lib/Qt5Gui.prl:
 ../../../../qt_creator/5.14.2/mingw73_64/lib/Qt5Core.prl:
 ../../../../qt_creator/5.14.2/mingw73_64/lib/qtmain.prl:
+.qmake.stash:
 ../../../../qt_creator/5.14.2/mingw73_64/mkspecs/features/build_pass.prf:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\L45\L45.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"

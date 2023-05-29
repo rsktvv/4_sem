@@ -25,10 +25,9 @@ public:
     void mousePressEvent(QMouseEvent *event);
     int Color(QPoint point,QVector<QPoint> circles);
 
-
 private:
     Ui::MainWindow *ui;
-    QVector<QPoint> circles;
+    QVector <QPoint> circles;
     int r=120;
 };
 #endif // MAINWINDOW_H

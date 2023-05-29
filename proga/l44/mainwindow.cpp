@@ -35,65 +35,72 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
 void MainWindow::mouseMoveEvent(QMouseEvent *event)
 {
     QWidget::setCursor(QCursor());
-    if(abs(event->x()-rect.left())<=a)
-        {
-            if((abs(event->y()-rect.top())<=a))
-            {
-                QWidget::setCursor(QCursor(Qt::SizeFDiagCursor));
-                if(click)
-                    rect.setTopLeft(event->pos());
-            }
-            else if(abs(event->y()-rect.bottom())<=a)
-            {
-                QWidget::setCursor(QCursor(Qt::SizeBDiagCursor));
-                if(click)
-                    rect.setBottomLeft(event->pos());
-            }
-            else
-            {
-                QWidget::setCursor(QCursor(Qt::SizeHorCursor));
-                if(click)
-                    rect.setLeft(event->x());
-            }
-        }
-        else if(abs(event->x()-rect.right())<=a)
-        {
-            if(abs(event->y()-rect.bottom())<=a)
-            {
-                QWidget::setCursor(QCursor(Qt::SizeFDiagCursor));
-                if(click)
-                {
-                    rect.setBottomRight(event->pos());
-                }
-            }
-            else if(abs(event->y()-rect.top())<=a)
-            {
-                QWidget::setCursor(QCursor(Qt::SizeBDiagCursor));
-                if(click)
-                {
-                    rect.setTopRight(event->pos());
-                }
-            }
-            else
-            {
-                QWidget::setCursor(QCursor(Qt::SizeHorCursor));
-                if(click)
-                   rect.setRight(event->x());
-            }
+//    if(abs(event->x()-rect.left())<=a)
+//        {
+//            if((abs(event->y()-rect.top())<=a))
+//            {
+//                QWidget::setCursor(QCursor(Qt::SizeFDiagCursor));
+//                if(click)
+//                    rect.setTopLeft(event->pos());
+//            }
+//            else if(abs(event->y()-rect.bottom())<=a)
+//            {
+//                QWidget::setCursor(QCursor(Qt::SizeBDiagCursor));
+//                if(click)
+//                    rect.setBottomLeft(event->pos());
+//            }
+//            else
+//            {
+//                QWidget::setCursor(QCursor(Qt::SizeHorCursor));
+//                if(click)
+//                    rect.setLeft(event->x());
+//            }
+//        }
+//        else if(abs(event->x()-rect.right())<=a)
+//        {
+//            if(abs(event->y()-rect.bottom())<=a)
+//            {
+//                QWidget::setCursor(QCursor(Qt::SizeFDiagCursor));
+//                if(click)
+//                {
+//                    rect.setBottomRight(event->pos());
+//                }
+//            }
+//            else if(abs(event->y()-rect.top())<=a)
+//            {
+//                QWidget::setCursor(QCursor(Qt::SizeBDiagCursor));
+//                if(click)
+//                {
+//                    rect.setTopRight(event->pos());
+//                }
+//            }
+//            else
+//            {
+//                QWidget::setCursor(QCursor(Qt::SizeHorCursor));
+//                if(click)
+//                   rect.setRight(event->x());
+//            }
 
-        }
-        else if(abs(event->y()-rect.top())<=a)
-        {
-            QWidget::setCursor(QCursor(Qt::SizeVerCursor));
-            if(click)
-                rect.setTop(event->y());
-        }
-        else if(abs(event->y()-rect.bottom())<=a)
-        {
-            QWidget::setCursor(QCursor(Qt::SizeVerCursor));
-            if(click)
-                rect.setBottom(event->y());
-        }
+//        }
+//        else if(abs(event->y()-rect.top())<=a)
+//        {
+//            QWidget::setCursor(QCursor(Qt::SizeVerCursor));
+//            if(click)
+//                rect.setTop(event->y());
+//        }
+//        else if(abs(event->y()-rect.bottom())<=a)
+//        {
+//            QWidget::setCursor(QCursor(Qt::SizeVerCursor));
+//            if(click)
+//                rect.setBottom(event->y());
+//        }
+    if(event->pos()==rect.topLeft() && event->y()-rect.topLeft().y()<=a)
+    {
+        QWidget::setCursor(QCursor(Qt::SizeFDiagCursor));
+        rect.setY(event->y());
+    }
+
+
     repaint();
 }
 

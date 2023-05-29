@@ -11,6 +11,7 @@
 #include <QtMath>
 
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -31,5 +32,7 @@ private:
     int score=0;
     int k=0;
     QVector <QPoint> mass;
+
+
 };
 #endif // MAINWINDOW_H

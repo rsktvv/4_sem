@@ -503,22 +503,7 @@ release/mainwindow.o: ../L45/mainwindow.cpp ../L45/mainwindow.h \
 		../../../../qt_creator/5.14.2/mingw73_64/include/QtGui/qpainter.h \
 		../../../../qt_creator/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
 		../../../../qt_creator/5.14.2/mingw73_64/include/QtGui/qpen.h \
-		ui_mainwindow.h \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtCore/QVariant \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtWidgets/QApplication \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtCore/qcoreapplication.h \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtCore/qeventloop.h \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtGui/qinputmethod.h \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtWidgets/QMenuBar \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtWidgets/qmenubar.h \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtWidgets/qmenu.h \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtWidgets/qaction.h \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtWidgets/qactiongroup.h \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtWidgets/QStatusBar \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtWidgets/qstatusbar.h \
-		../../../../qt_creator/5.14.2/mingw73_64/include/QtWidgets/QWidget
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\L45\mainwindow.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 

@@ -1,6 +1,5 @@
 import math
 
-
 def solvePell(n):
     x = int(math.sqrt(n))
     y, z, r = x, 1, x << 1
@@ -15,6 +14,5 @@ def solvePell(n):
         a, b = f2 * x + e2, f2
         if a * a - n * b * b == 1:
             return a, b
-
 
 print(solvePell(11452))

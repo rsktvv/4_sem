@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
 {
+
     QMessageBox msg;
     if(k<5)
     {
@@ -20,17 +21,8 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
     }
     if(k==5)
     {
-        if(score==0)
-        {
-            msg.setText(QString("еблан?"));
-            msg.exec();
-        }
-            else
-        {
-            msg.setText(QString("%1").arg(score));
-            msg.exec();
-        }
-
+        msg.setText(QString("%1").arg(score));
+        msg.exec();
     }
     repaint();
 
@@ -57,6 +49,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
             painter.drawText(geometry().width()/2-5 ,geometry().height()/2-5-(i-1)*size/2,s.sprintf("%d",11-i));
         }
     }
+
 
     for(int i=0;i<mass.size();i++)
     {
